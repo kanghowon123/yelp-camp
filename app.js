@@ -27,7 +27,7 @@ const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl, {
   tls: true,
   ssl: true,
-  serverSelectionTimeoutMS: 10000, // 서버 연결 대기 시간 (5초)
+  serverSelectionTimeoutMS: 50000, // 서버 연결 대기 시간 (50초)
 });
 
 // 이 로직은 오류를 확인하고 오류 없이 제대로 열렸다면 연결 문구를 출력함
