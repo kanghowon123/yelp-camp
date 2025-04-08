@@ -25,10 +25,10 @@ const MongoStore = require('connect-mongo');
 
 const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  ssl: true, // SSL 연결 사용
   tls: true,
+  ssl: true,
+  sslValidate: false, // 인증서 검증 비활성화 (주의)
+  serverSelectionTimeoutMS: 5000, // 서버 연결 대기 시간 (5초)
 });
 
 // 이 로직은 오류를 확인하고 오류 없이 제대로 열렸다면 연결 문구를 출력함
