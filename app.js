@@ -24,7 +24,9 @@ const reviewRoutes = require('./routes/reviews');
 const MongoStore = require('connect-mongo');
 
 const dbUrl = process.env.DB_URL;
-mongoose.connect(dbUrl);
+mongoose.connect(dbUrl, {
+  ssl: true,
+});
 
 // 이 로직은 오류를 확인하고 오류 없이 제대로 열렸다면 연결 문구를 출력함
 const db = mongoose.connection;
