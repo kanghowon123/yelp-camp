@@ -25,6 +25,7 @@ const MongoStore = require('connect-mongo');
 
 const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl, {
+  tls: true,
   ssl: true,
 });
 
